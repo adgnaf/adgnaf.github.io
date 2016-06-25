@@ -1,32 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Homepage</title>
-</head>
-<body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">homepage</div>
-<div class="menu-item"><a href="index.html" class="current">home</a></div>
-<div class="menu-item"><a href="extra.html">extra</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Homepage</h1>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
-<p>This is the homepage of student Cai, Fangda. </p>
-<div id="footer">
-<div id="footer-text">
-Page generated 2016-02-25 11:37:04 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
-</div>
-</div>
-</td>
-</tr>
-</table>
-</body>
-</html>
